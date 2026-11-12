@@ -1,0 +1,224 @@
+@import 'tailwindcss';
+
+:root {
+  --control-radius: 8px;
+  --popup-shadow: 0 8px 28px -8px rgb(0 0 0 / 0.18), 0 2px 6px rgb(0 0 0 / 0.06);
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+
+  /* Brand. */
+  --primary: #0a0a0a;
+  --primary-hover: #262626;
+  --primary-foreground: #ffffff;
+  --primary-soft: #f4f4f4;
+
+  --secondary: #f4f4f4;
+  --secondary-foreground: #0a0a0a;
+
+  --muted: #f4f4f4;
+  --muted-foreground: #525252;
+  /* A third text level for hints and metadata; shadcn stops at two. */
+  --subtle-foreground: #707070;
+
+  /* shadcn's --accent is the hover/highlight background, not the brand colour. */
+  --accent: #f4f4f4;
+  --accent-foreground: #0a0a0a;
+
+  /* Was ~1.05:1 against the page and effectively invisible. */
+  --border: #e4e4e4;
+  --border-strong: #c8c8c8;
+  --input: #d8d8d8;
+  --ring: #0a0a0a;
+
+  /* Reserved for connection state, so it never reads as a generic confirmation green. */
+  --live: #0b8a70;
+  --live-soft: #e0f0eb;
+
+  --destructive: #af1f2d;
+  --destructive-foreground: #ffffff;
+  --danger: #af1f2d;
+  --danger-soft: #fbe9eb;
+  /* Filled danger needs its own pair: in dark, --danger is a light text colour and white
+     on top of it is unreadable. */
+  --danger-solid: #b0202e;
+  --danger-solid-hover: #931925;
+  --danger-solid-fg: #ffffff;
+
+  --warning: #96620a;
+  --warning-soft: #fbf1dc;
+
+  --shadow-sm: 0 1px 2px rgb(13 17 23 / 0.05);
+  --shadow-pop: 0 8px 28px -8px rgb(13 17 23 / 0.18), 0 2px 6px rgb(13 17 23 / 0.06);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-live: var(--live);
+  --color-live-soft: var(--live-soft);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-solid: var(--danger-solid);
+  --color-danger-solid-hover: var(--danger-solid-hover);
+  --color-danger-solid-fg: var(--danger-solid-fg);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+}
+
+:root {
+  --radius: 8px;
+  --primary: #4338ca;
+  --primary-hover: #3730a3;
+  --primary-foreground: #fff;
+  --ring: #4338ca;
+}
+
+:root {
+  --app-font: ui-sans-serif, system-ui, sans-serif;
+  color-scheme: light;
+  font-family: var(--app-font);
+  color: #20202c;
+  background: #f8f8fc;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  line-height: 1.6;
+}
+.shell {
+  max-width: 1000px;
+  margin: auto;
+  padding: 64px 24px;
+}
+.narrow {
+  max-width: 520px;
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  margin: 16px 0;
+}
+h2 {
+  font-size: 1.25rem;
+  margin: 8px 0;
+}
+p {
+  max-width: 65ch;
+}
+.eyebrow {
+  font:
+    11px ui-monospace,
+    monospace;
+  letter-spacing: 0.12em;
+  color: #626273;
+}
+.hint {
+  font-size: 13px;
+  color: #626273;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px 0;
+}
+.control-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.narrow form > [data-slot='label'],
+.workspace form > [data-slot='label'] {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+a {
+  color: #4338ca;
+}
+a:focus-visible {
+  outline: 2px solid #4338ca;
+  outline-offset: 4px;
+}
+[role='alert'] {
+  color: #9f2424;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+}
+.workspace {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: end;
+  padding: 24px 0;
+  border-block: 1px solid #dedee7;
+  margin-bottom: 32px;
+}
+.workspace form {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.exports {
+  font-size: 13px;
+  padding-left: 18px;
+}
+.inbox-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0 16px;
+}
+.inbox-area {
+  max-width: 640px;
+  margin-left: auto;
+}
+.bell-row {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 12px;
+}
+@media (max-width: 550px) {
+  .shell {
+    padding: 32px 18px;
+  }
+}

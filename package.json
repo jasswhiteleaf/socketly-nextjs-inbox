@@ -1,0 +1,47 @@
+{
+  "name": "socketly-nextjs-inbox-starter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "setup": "node scripts/setup.mjs",
+    "db:migrate": "tsx --env-file=.env.local scripts/migrate.ts",
+    "test:e2e": "node tests/e2e.mjs"
+  },
+  "dependencies": {
+    "@socketly/client": "0.3.0-beta.1",
+    "@socketly/server": "0.3.0-beta.1",
+    "@socketly/react": "0.3.0-beta.1",
+    "@socketly/react-ui": "0.3.0-beta.1",
+    "better-auth": "1.7.20",
+    "next": "16.4.6",
+    "pg": "8.16.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "0.0.1",
+    "@base-ui/react": "1.7.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "tailwind-merge": "3.4.0",
+    "lucide-react": "0.553.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.1",
+    "@types/pg": "8.15.6",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.9.3",
+    "tsx": "4.23.15",
+    "playwright": "1.62.1",
+    "tailwindcss": "4.1.17",
+    "@tailwindcss/postcss": "4.1.17",
+    "postcss": "8.5.32"
+  }
+}

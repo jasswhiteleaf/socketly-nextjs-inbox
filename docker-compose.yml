@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: starter
+      POSTGRES_PASSWORD: starter-local-only
+      POSTGRES_DB: socketly_starter
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - starter_database:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U starter -d socketly_starter"]
+      interval: 3s
+      timeout: 3s
+      retries: 15
+volumes:
+  starter_database:
